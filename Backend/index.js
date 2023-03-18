@@ -19,7 +19,7 @@ app.use('/api/journal', journalRouter)
 app.use('/api', userRouter)
 
 mongoose
-    .connect('mongodb+srv://root:root@cluster0.mfkzp05.mongodb.net/untangled?retryWrites=true&w=majority')
+    .connect(MONGO_URI)
     .then(()=>app.listen(port))
     .then(()=> 
     console.log(`connected to ${port}`))
