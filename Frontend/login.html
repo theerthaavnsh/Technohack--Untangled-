@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script defer src="./scripts/login.js"></script>
+</head>
+<body class="login-body">
+    <div class="container">
+        <div class="mask">
+            <div class="new-container">
+                <h1>Hello!</h1>
+                <p>If you already have an account please sign in</p>
+                <button id="sign-in">SIGN IN</button>
+            </div>
+            <div class="old-container">
+                <h1>Welcome Back!</h1>
+                <p>If you don't have an account please register</p>
+                <button id="sign-up">SIGN UP</button>
+            </div>
+        </div>
+        <form class="left-side">
+            <h1>Sign In</h1>
+            <div class="input-grp">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Password">
+            </div>
+            <small>Forgot your password?</small>
+            <button type="submit">SIGN IN</button>
+        </form>
+        <form class="right-side">
+            <h1>Create Account</h1>
+            <div class="input-grp">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Password">
+            </div>
+            <button type="submit">SIGN UP</button>
+        </form>
+    </div>
+</body>
+</html>
