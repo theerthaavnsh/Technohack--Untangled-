@@ -129,7 +129,6 @@ a{
     align-items: center;
     background-color: #f7f4f4;
 }
-
 .container{
     width: 650px;
     height: 400px;
@@ -138,7 +137,7 @@ a{
     border-radius: 7px;
     display: flex;
     position: relative;
-    form{
+    .left-side, right-side{
         height: 100%;
         width: 50%;
         display: flex;
@@ -220,7 +219,7 @@ a{
     }
 }
 
-// Home Page
+// Heade and Footer
 .navigation-bar{
     display: flex;
     justify-content: space-between;
@@ -282,6 +281,8 @@ footer{
         width: 200px;
     }
 }
+
+// Home 
 .home-body{
     overflow-y: scroll;
     &::-webkit-scrollbar {
@@ -391,8 +392,72 @@ footer{
             }
         }
     }
+    .resources{
+        .content{
+            .flip-card {
+                background-color: transparent;
+                width: 190px;
+                height: 254px;
+                perspective: 1000px;
+                font-family: sans-serif;
+              }
+              
+              .title {
+                font-size: 1.5em;
+                font-weight: 900;
+                text-align: center;
+                margin: 0;
+              }
+              
+              .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+              }
+              
+              .flip-card:hover .flip-card-inner {
+                transform: rotateY(180deg);
+              }
+              
+              .flip-card-front, .flip-card-back {
+                box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                border: 1px solid coral;
+                border-radius: 1rem;
+              }
+              
+              .flip-card-front {
+                background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
+                   rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+                color: coral;
+              }
+              
+              .flip-card-back {
+                background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+                   bisque 40%, rgb(255, 185, 160) 78%);
+                color: white;
+                transform: rotateY(180deg);
+              }
+        }
+    }
 }
 
+// About Us
+.about-body{
+
+}
+
+// Pet
 .pet-body{
     display: flex;
     background-image: url("../assets/petbg.png");
@@ -402,6 +467,7 @@ footer{
     height: 100vh;
 }
 
+// Qns 
 .qn-body{
     &::-webkit-scrollbar {
         display: none;
@@ -468,6 +534,7 @@ footer{
             font-weight: 700;
             float: right;
             cursor: pointer;
+            margin-bottom: 1em;
         }
     }
     .score{
@@ -508,6 +575,35 @@ footer{
                 font-weight: 700;
             }
         }
+    }
+}
+
+.music-body{
+    display: grid;
+    place-items: center;
+    background-color: black;
+    height: 100vh;
+    overflow-y: scroll;
+    background-image: url('../assets/gradient.png');
+    background-size: cover;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+    h1{
+        color: black;
+        font-size: 2rem;
+    }
+    .grp{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2em;
+        background-color: white;
+        padding: 5em 3em;
+        width: 500px;
+        margin: 5em 0em;
+        border-radius: 5px;
     }
 }
 
