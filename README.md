@@ -9,8 +9,10 @@ Untangled is a website designed to help individuals who may be experiencing depr
 To get started with Untangled, simply navigate to the website URL, where they will be taken to a welcome page, through this page the user can sign in and begin exploring the available resources. The depression detection questionnaire can be accessed directly from the homepage, and users can also browse the therapist directory to find a mental health professional near them. To schedule an online therapy session, users can click on the "Book Therapy" button located at the home page or the "our services page". If the depression detection test suggests that the user has depression, an option will be provided automatically to choose online therapy or suggests a list of local therapists that the user can visit. 
 
 <h2> 2. Features </h2>
+
 Depression Detection Questionnaire
 The depression detection questionnaire on Untangled is a simple and straightforward tool that can help individuals determine whether they may be experiencing symptoms of depression. The questionnaire consists of a series of questions about mood, energy level, sleep patterns, and other factors commonly associated with depression. After completing the questionnaire, users will receive a summary of their results and recommendations for next steps, such as seeking therapy or consulting with a mental health professional.
+
 
 <h3> Therapist Directory </h3>
 Untangled offers a comprehensive therapist directory, which allows users to search for mental health professionals in their area. The directory includes information about each therapist's qualifications, areas of expertise, and contact information, making it easy for users to connect with the right mental health professional for their needs.
