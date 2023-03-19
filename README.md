@@ -47,17 +47,14 @@ To run the tests for this app, run the following command in your terminal: npm t
 Deployment
 This app can be deployed to a cloud service provider like Heroku, AWS, or Azure. Be sure to configure your environment variables for the production environment.
 
-Built With
-React - JavaScript library for building user interfaces
+HTML - Standard markup language for web frameworks
 Node.js - JavaScript runtime built on Chrome's V8 JavaScript engine
-Express - Web framework for Node.js
+Express - Web framework for Node.js to make RESTful api's
 MongoDB - NoSQL database
+SCSS - Advanced version of CSS
+Bcryptjs - For password hashing
+Mongoose - To conncet database with REST api 
 
-<h3> Contributing </h3>
-If you would like to contribute to Untangled, please feel free to submit a pull request or open an issue on the project's GitHub repository. We welcome contributions of all kinds, including bug reports, feature requests, and code improvements.
-
-<h3> License </h3>
-Untangled is released under the MIT license. For more information, please see the LICENSE file in the project's GitHub repository.
 
 <h3> Contact </h3> 
 If you have any questions, comments, or concerns about Untangled, please feel free to reach out to us at theerthaavnsh@gmail.com. We value your feedback and are always looking for ways to improve the site and better serve our users.
