@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Nearby Hospitals and Therapy Centers</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <style>
+    #mapid {
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="mapid"></div>
+  <script>
+    var mymap = L.map('mapid').setView([0, 0], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      tileSize: 512,
+      zoomOffset: -1
+    }).addTo(mymap);
+
+    const ipLookupUrl = 'https://ipapi.co/json/';
+    fetch(ipLookupUrl)
+      .then(response => response.json())
+      .then(data => {
+        console.log('User IP address:', data.ip);
+        const userLocation = {
+          lat: data.latitude,
+          lng: data.longitude
+        };
+        L.marker([userLocation.lat, userLocation.lng]).addTo(mymap).bindPopup("You are here!");
+
+        // Perform nearby search for hospitals and therapy centers
+        const apiUrl = 'https://nominatim.openstreetmap.org/search';
+        const params = new URLSearchParams({
+          q: 'hospital therapy center',
+          format: 'json',
+          lat: userLocation.lat,
+          lon: userLocation.lng,
+          radius: 1000000000000000000000000, // in meters
+          limit: 10,
+          addressdetails: 1
+        });
+        const url = `${apiUrl}?${params}`;
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(place => {
+              const latlng = {
+                lat: parseFloat(place.lat),
+                lng: parseFloat(place.lon)
+              };
+              if (place.category === 'healthcare') {
+                L.marker(latlng, { icon: L.icon({ iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png', shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', iconSize: [25, 41], iconAnchor: [12, 41] }) })
+                  .addTo(mymap).bindPopup(`<b>${place.display_name}</b><br>${place.address?.road || ''}, ${place.address?.city || ''}`);
+              } else {
+                L.marker(latlng).addTo(mymap).bindPopup(`<b>${place.display_name}</b><br>${place.address?.road || ''}, ${place.address?.city || ''}`);
+              }
+            });
+          })
+          .catch(error => {
+            console.error('Error fetching nearby places:', error);
+          });
+      })
+      .catch(error => {
+        console.error('Error retrieving user IP address:', error);
+      });
+  </script>
+</body>
+</html>
