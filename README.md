@@ -28,14 +28,30 @@ Finally, Untangled features a digital pet bunny, which is designed to provide us
  <b>Gratitude Journaling</b> : Gratitude journaling can help face depression by focusing on positive experiences and emotions, promoting optimism and self-awareness, and increasing resilience and mental flexibility. We have already built the API, and the new feature is on its way. 
  
  <b>Sentiment analysis</b> : Sentiment analysis can be used to extract emotions and attitudes related to depression from text data, such as social media posts and therapy transcripts. It can provide insights into the experiences of people with depression and inform interventions and treatments.
+ .
+ <h1> <b> Tech Stack </b> </h1> 
  
- <h2> Tech Stack </h2> 
- 
- <h3> FRONTEND </H3>
- 
- <B> HTML </b> The HTML files in the Untangled frontend are used to structure the user interface of the website. Each HTML file corresponds to a different page on the website, and contains a series of elements that define the layout and content of that page.
- <B> CSS </B> The CSS files in the Untangled frontend are used to style the user interface of the website. Each CSS file corresponds to a different page on the website, and contains a series of styles that define the visual appearance of that page.
- <b> Javascript </B> The JavaScript files in the Untangled frontend are used to add interactivity to the user interface of the website. Each JavaScript file corresponds to a different page on the website, and contains a series of functions that handle user input and respond to events.
+To run this app, you'll need to have the following installed on your machine:
+Node.js
+MongoDB
+
+Instalation
+Clone this repository to your local machine
+Navigate to the project directory in your terminal and run npm install to install the project dependencies
+Start the MongoDB server by running mongod in a separate terminal window
+Run npm start to start the app
+The app should now be accessible at http://localhost:3000
+Running Tests
+To run the tests for this app, run the following command in your terminal: npm test.
+
+Deployment
+This app can be deployed to a cloud service provider like Heroku, AWS, or Azure. Be sure to configure your environment variables for the production environment.
+
+Built With
+React - JavaScript library for building user interfaces
+Node.js - JavaScript runtime built on Chrome's V8 JavaScript engine
+Express - Web framework for Node.js
+MongoDB - NoSQL database
 
 <h3> Contributing </h3>
 If you would like to contribute to Untangled, please feel free to submit a pull request or open an issue on the project's GitHub repository. We welcome contributions of all kinds, including bug reports, feature requests, and code improvements.
