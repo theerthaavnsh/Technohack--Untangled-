@@ -454,7 +454,18 @@ footer{
 
 // About Us
 .about-body{
-
+    background-image: url("../assets/petbg.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .container1, .container2{
+        display: none;
+        .aravind, .theertha, .nikhil, .deepak{
+            width: 100px;
+        }
+    }
 }
 
 // Pet
